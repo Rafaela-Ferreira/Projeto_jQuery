@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,10 +9,43 @@
     <script src="jquery-3.6.1.min.js"></script>
 </head>
 <body>
-    <h1>Teste</h1>
+    <h1>Teste 1</h1>
+    <h2>teste 2</h2>
+    <h3>Tente clicar</h3>
+    <div id="flip">
+        Clique em mim
+    </div>
+    <div id="panel" style="background-color: lightblue;">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis omnis 
+        dolorum animi unde molestiae tenetur adipisci, ipsa earum voluptatibus in 
+        sed consequuntur mollitia, hic culpa ullam dolor, eaque voluptate praesentium.
+    </div>
+
     <script>
         alert(1);
         $('h1').hide();
+        //toda vez que clicar vai desaparecer.
+        $('h2').on('click', function(){
+            $(this).hide();
+        }
+        )
+        //alterna as cores
+        $('h3').on({
+            mouseenter:function (){
+                $(this).css('background-color', 'lightgray')
+            },
+            mouseleave:function (){
+                $(this).css('background-color', 'lightblue')
+            },//alterna a cor ao clicar.
+            click:function (){
+                $(this).css('background-color', 'yellow')
+            }
+        })
+        //alterna entre aparecer e ocutar.
+        $('#panel').hide();
+        $('#flip').click(function(){
+            $('#panel').slideToggle();
+        })
     </script>
 </body>
 </html>
